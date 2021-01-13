@@ -22,6 +22,7 @@ class SearchBar extends React.Component{
                         <label>Image Search</label>
                         {/* onChange={this.onInputChange()} would call everytime on render. onInputChange just calls when input changes */}
                         {/* we can also do onChange={(e)=>console.log(e.target.value)} */}
+                        {/* also remember that simply setting value doesn't update state: we need to setstate */}
                         <input 
                             type="text"
                             value={this.state.term} 

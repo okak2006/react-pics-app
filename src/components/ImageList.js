@@ -1,4 +1,6 @@
 import React from 'react';
+import './ImageList.css';
+import ImageCard from './ImageCard'
 
 const ImageList = (props) => {
     //map returns arr
@@ -6,12 +8,12 @@ const ImageList = (props) => {
     const images = props.images.map(
         //upon re-render React needs to compare and contrast existing DOM and new DOM to be rendered
         //in doing so keys are used for performance enhancements
-        image => <img key={image.id} src={image.urls.regular} alt={image.description}/>
+        image => <ImageCard key={image.id} image={image}/>
         //better syntax
         //({description, id, urls}) => {return <img alt={descrption} key={id} src={urls.regular} />
     )
     //we can render each items in arr like this
-    return <div> { images } </div>
+    return <div className="image-list"> { images } </div>
 }
 
 export default ImageList;
